@@ -1,0 +1,25 @@
+.form {
+  background-color: #cccccc;
+  max-width: 600px;
+  border-radius: 8px;
+  margin: 32px auto 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.formError {
+  color: #cb3837;
+}
+
+.formGroupHidden {
+  display: none;
+}
+
