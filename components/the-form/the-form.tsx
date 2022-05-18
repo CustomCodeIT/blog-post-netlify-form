@@ -63,9 +63,9 @@ const TheForm:NextPage<Props> = (props) => {
     }
 
     return (
-        <form name="TheForm" onSubmit={handleSubmit(onSubmit)} data-netlify={true} netlify-honeypot={"bot_field"} className={styles.form}>
+        <form name="contact" onSubmit={handleSubmit(onSubmit)} data-netlify={true} data-netlify-honeypot={"bot_field"} className={styles.form}>
 
-            <input type="hidden" value="TheForm" {...register("form_name")} />
+            <input type="hidden" value="contact" {...register("form_name")} />
 
             <div className={styles.formGroupHidden}>
                 <label htmlFor="bot_field" className={styles.formLabel}>Are you a bot?</label>
