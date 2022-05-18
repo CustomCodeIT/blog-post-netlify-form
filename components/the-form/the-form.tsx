@@ -6,18 +6,19 @@ import {Controller, useForm} from "react-hook-form";
 import Select from "react-select";
 import {TheForm} from "../../types/the-form";
 import {ErrorMessage} from "@hookform/error-message";
+import {StringValueSelect} from "../../types/select";
 
 type Props = {};
 
 const TheForm:NextPage<Props> = (props) => {
 
-    const options = [
+    const options:StringValueSelect[] = [
         { value: 'red', label: 'Red' },
         { value: 'green', label: 'Green' },
         { value: 'blue', label: 'Blue' },
         { value: 'yellow', label: 'Yellow' },
         { value: 'orange', label: 'Orange' },
-    ]
+    ];
 
     const { control, register, reset, handleSubmit, formState: { errors } } = useForm<TheForm>({
         mode: 'all',
@@ -68,37 +69,37 @@ const TheForm:NextPage<Props> = (props) => {
             <input type="hidden" value="contact" {...register("form_name")} />
 
             <div className={styles.formGroupHidden}>
-                <label htmlFor="bot_field" className={styles.formLabel}>Are you a bot?</label>
-                <input {...register("bot_field")} className={styles.formInput}/>
+                <label htmlFor="bot_field" >Are you a bot?</label>
+                <input {...register("bot_field")} />
             </div>
 
             <div className={styles.formGroup}>
-                <label htmlFor="first_name" className={styles.formLabel}>First Name</label>
-                <input className={styles.formInput} {...register("first_name")}/>
+                <label htmlFor="first_name" >First Name</label>
+                <input {...register("first_name")}/>
                 <span className={styles.formError}><ErrorMessage name={"first_name"} errors={errors} /></span>
             </div>
 
             <div className={styles.formGroup}>
-                <label htmlFor="last_name" className={styles.formLabel}>Last Name</label>
-                <input className={styles.formInput} {...register("last_name")}/>
+                <label htmlFor="last_name" >Last Name</label>
+                <input {...register("last_name")}/>
                 <span className={styles.formError}><ErrorMessage name={"last_name"} errors={errors} /></span>
             </div>
 
             <div className={styles.formGroup}>
-                <label htmlFor="email" className={styles.formLabel}>Email</label>
-                <input type="email" className={styles.formInput} {...register("email")}/>
+                <label htmlFor="email" >Email</label>
+                <input type="email" {...register("email")}/>
                 <span className={styles.formError}><ErrorMessage name={"email"} errors={errors} /></span>
             </div>
 
             <div className={styles.formGroup}>
-                <label htmlFor="favorite_colour_select" className={styles.formLabel}>Favorite Colour</label>
+                <label htmlFor="favorite_colour_select" >Favorite Colour</label>
                 <Controller
                     name={'favorite_colour_select'}
                     control={control}
                     render={({field: {value, onChange}}) => <Select
                         id={"favorite_colour_select"}
                         instanceId={"favorite_colour_select"}
-                        placeholder={"Select state..."}
+                        placeholder={"Pick your favorite colour..."}
                         isClearable={true}
                         options={options}
                         value={value}
@@ -109,7 +110,7 @@ const TheForm:NextPage<Props> = (props) => {
             </div>
 
             <div className={styles.formControls}>
-                <input type={"submit"} className={`${styles.control} ${styles.controlButton} ${styles.btn} ${styles.btnPrimary}`} value={"Submit"}/>
+                <input type={"submit"} value={"Submit"}/>
             </div>
         </form>
     );

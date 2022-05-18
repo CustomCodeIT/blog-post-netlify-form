@@ -20,14 +20,4 @@ export const theFormValidator = Yup.object().shape({
     })
         .nullable(true)
         .required("Favorite colour is required."),
-
-    // favorite_colour_select: Yup.object().shape({
-    //     label: Yup.string()
-    //         .nullable(true)
-    //         .transform((v, o) => o === '' ? null : v),
-    //     value: Yup.string()
-    //         .nullable(true)
-    //         .transform((v, o) => o === '' ? null : v),
-    // })
-    //     .nullable(true),
 });
