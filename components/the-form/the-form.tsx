@@ -63,7 +63,7 @@ const TheForm:NextPage<Props> = (props) => {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} data-netlify={true} netlify-honeypot={"bot_field"} className={styles.form}>
+        <form name="TheForm" onSubmit={handleSubmit(onSubmit)} data-netlify={true} netlify-honeypot={"bot_field"} className={styles.form}>
 
             <input type="hidden" value="TheForm" {...register("form_name")} />
 
